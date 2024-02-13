@@ -1,4 +1,4 @@
-# Nombre del Proyecto
+# Servicio Social Microservicios
 
 Aquí va el nombre descriptivo del proyecto.
 
@@ -9,8 +9,8 @@ Breve descripción del proyecto y su propósito.
 ## Tecnologías Utilizadas
 
 - Node.js
-- Express (para el servidor API, si aplica)
-- Angular (para la aplicación frontend, si aplica)
+- Express (para la aplicación backend)
+- Angular (para la aplicación frontend)
 - Docker
 
 ## Requisitos Previos
@@ -73,8 +73,6 @@ Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, sigue 
 5. Abre un Pull Request.
 
 ## Licencia
-
-[Coloca aquí la licencia del proyecto, si aplica.]
 
 ---
 
