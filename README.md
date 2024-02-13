@@ -58,7 +58,7 @@ Cada microservicio es independiente y se comunica con los demás a través de in
    docker build -t api:latest .
    ```
 
-4. Construye la imagen Docker de la aplicación Angular (si aplica):
+4. Construye la imagen Docker de la aplicación Angular:
 
    ```bash
    docker build -t angular-app:latest .
