@@ -43,7 +43,7 @@ Cada microservicio es independiente y se comunica con los demás a través de in
 1. Clona este repositorio en tu máquina local:
 
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone <https://github.com/Oreo17/Servicio_Social.git>
    ```
 
 2. Accede al directorio del proyecto:
