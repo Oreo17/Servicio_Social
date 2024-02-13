@@ -1,10 +1,31 @@
-# Servicio Social Microservicios
+# Sistema de Tutoría Escolar
 
-Aquí va el nombre descriptivo del proyecto.
+El proyecto del Sistema de Tutoría Escolar tiene como objetivo abordar y reducir los problemas identificados en el ámbito universitario, proporcionando un sistema dedicado al acompañamiento académico de los estudiantes. Los estudiantes de la BUAP generalmente tienen problemas para visualizar su avance académico de forma fácil y gráfica, generando problemas en mantener un seguimiento de su situación e información importante. Este sistema integra un seguimiento detallado del historial académico, brindando vistas específicas tanto para alumnos como para tutores, además de mostrar dicho historial académico con una buena presentación, mejorando la accesibilidad para todo usuario que use el sistema.
 
-## Descripción
+## Microservicios
 
-Breve descripción del proyecto y su propósito.
+El Sistema de Tutoría Escolar se implementa utilizando una arquitectura de microservicios. Los microservicios son una forma de estructurar una aplicación como un conjunto de pequeños servicios independientes, cada uno de los cuales se centra en realizar una tarea específica.
+
+### Ventajas de los Microservicios:
+
+- **Escalabilidad**: Los microservicios permiten escalar partes específicas de la aplicación según sea necesario, lo que mejora la capacidad de respuesta y la eficiencia.
+- **Flexibilidad**: Cada microservicio puede ser desarrollado, desplegado y actualizado de forma independiente, lo que facilita la incorporación de cambios y mejoras en la aplicación.
+
+- **Mantenimiento Simplificado**: Al dividir la aplicación en servicios más pequeños y enfocados, el mantenimiento y la resolución de problemas se simplifican, ya que cada microservicio es más fácil de entender y depurar.
+
+### Implementación de Microservicios en el Sistema de Tutoría Escolar:
+
+El Sistema de Tutoría Escolar se divide en los siguientes microservicios:
+
+1. **Gestión de Usuarios**: Maneja el registro, inicio de sesión y gestión de perfiles de usuarios.
+
+2. **Gestión de Tutorías**: Administra la programación y seguimiento de sesiones de tutoría entre estudiantes y tutores.
+
+3. **Gestión Académica**: Maneja el seguimiento y visualización del historial académico de los estudiantes.
+
+4. **Interfaz de Usuario**: Proporciona una interfaz de usuario amigable para que los estudiantes y tutores interactúen con el sistema.
+
+Cada microservicio es independiente y se comunica con los demás a través de interfaces bien definidas, lo que permite una fácil integración y colaboración entre los diferentes componentes del sistema.
 
 ## Tecnologías Utilizadas
 
