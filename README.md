@@ -66,13 +66,13 @@ Cada microservicio es independiente y se comunica con los demás a través de in
 
 ## Ejecución
 
-- Para ejecutar el servidor API (si aplica):
+- Para ejecutar el servidor API:
 
   ```bash
   docker run -p 3000:3006 api:latest
   ```
 
-- Para ejecutar la aplicación Angular (si aplica):
+- Para ejecutar la aplicación Angular:
 
   ```bash
   docker run -p 8080:4200 angular-app:latest
