@@ -1,0 +1,80 @@
+img.response {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .colorBuap {
+    background: #003b5c;
+    color: #fff;
+  }
+  
+  .colorBuap li a {
+    color: #fff;
+  }
+  
+  .colorBuap li a:hover,
+  .colorBuap div a:hover {
+    color: rgb(184, 208, 228);
+  }
+  
+  .page-footer {
+    padding: 10px;
+  }
+  
+  .progress-bar {
+    background: #003b5c;
+  }
+  
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  a.mas{
+    color: #003b5c;
+  }
+  
+  span.info {
+    font-style: italic;
+  }
+  
+  .colorTenue {
+    color: #333 !important;
+  }
+  
+  .principal {
+    background-color: #fff;
+    color: rgb(17, 16, 16);
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .btn-blue {
+    background-color: hsl(219.09, 74.16%, 34.9%);
+    color: #fff;
+  }
+  
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #e7e3e3 #212529;
+  }
+  
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: rgb(193, 190, 194) 100%;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #e7e3e3;
+    border-radius: 10px;
+  }

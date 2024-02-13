@@ -1,0 +1,11 @@
+.error {
+  color: hsl(0, 78%, 57%);
+  padding: 2px 2px;
+  font-size: medium;
+}
+
+.containerError {
+  background-color: hsl(0, 40%, 82%);
+  max-width: 100%;
+  border-radius: 5px;
+}

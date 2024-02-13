@@ -1,0 +1,5 @@
+<app-nav *ngIf="isHomePage"></app-nav>
+<app-nav-account *ngIf="isAccountPage"></app-nav-account>
+<app-nav-admin *ngIf="isAdminPage"></app-nav-admin>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

@@ -1,0 +1,856 @@
+<div class="container mb-4">
+    <img class="img-fluid estudiantes mx-auto d-block" src="../../../assets/images/estudiantes.png" alt="">
+    <h3 class="my-3 text-center">Proyección materias semestral</h3>
+    <div class="container info py-3">
+        <h5 class="text-center titulo">Código de colores</h5>
+    </div>
+    <div class="row my-3">
+        <div class="col-md-3 d-flex justify-content-center">
+            <div class="container cursando grow my-2">
+                <p class="espacio">Cursando</p>
+            </div>
+        </div>
+        <div class="col-md-3 d-flex justify-content-center">
+            <div class="container aprobada grow my-2">
+                <p class="espacio">Aprobada</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 d-flex justify-content-center">
+            <div class="container reprobada grow my-2">
+                <p class="espacio">Reprobada</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 d-flex justify-content-center">
+            <div class="container materia grow my-2">
+                <p class="espacio">Por cursar</p>
+            </div>
+        </div>
+    </div>
+    <div class="container info py-3">
+        <h5 class="text-center titulo">Iconos</h5>
+    </div>
+    <div class="container px-4 text-center">
+        <div class="row gx-5 my-3">
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="p-3 ico espacio">
+                    Reprobó al menos una vez la materia
+                    <i class="fa-solid fa-circle-xmark fa-xl"></i>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="p-3 ico espacio">
+                    Aprobó satisfactoriamente.
+                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container" *ngIf="data && data.length > 0">
+    <div class="container basico py-3">
+        <h5 class="text-center titulo">Nivel Básico</h5>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="d-flex justify-content-center" scope="col">
+                            <div class="container semestre">
+                                <p class="espacio">1</p>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="d-flex justify-content-center">
+                        <td>
+                            <!-- clase aprobada lo convierte en verde, cursando = azul  -->
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[0]?.calificacion, data[0].clases[0]?.cursada)" id="7">
+                                <p class="espacio">Introducción a las Matemáticas</p>
+                                <p class="calificacion">{{data[0].clases[0]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[0]?.intentos, data[0].clases[0]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[1]?.calificacion, data[0].clases[1]?.cursada)" id="8">
+                                <p class="espacio">Introducción a las Programación</p>
+                                <p class="calificacion">{{data[0].clases[1]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[1]?.intentos, data[0].clases[1]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[2]?.calificacion, data[0].clases[2]?.cursada)" id="9">
+                                <p class="espacio">Teoria Gral. de Sistemas y Sist. de la Información</p>
+                                <p class="calificacion">{{data[0].clases[2]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[2]?.intentos, data[0].clases[2]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[3]?.calificacion, data[0].clases[3]?.cursada)" id="10">
+                                <p class="espacio">Lengua Extranjera I</p>
+                                <p class="calificacion">{{data[0].clases[3]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[3]?.intentos, data[0].clases[3]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[4]?.calificacion, data[0].clases[4]?.cursada)" id="12">
+                                <p class="espacio">Formación Humana y Social</p>
+                                <p class="calificacion">{{data[0].clases[4]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[4]?.intentos, data[0].clases[4]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="d-flex justify-content-center" scope="col">
+                            <div class="container semestre">
+                                <p class="espacio">2</p>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="d-flex justify-content-center">
+                        <td>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[5]?.calificacion, data[0].clases[5]?.cursada)" id="20">
+                                <p class="espacio">Cálculo Diferencial e Integral</p>
+                                <p class="calificacion">{{data[0].clases[5]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[5]?.intentos, data[0].clases[5]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[6]?.calificacion, data[0].clases[6]?.cursada)" id="21">
+                                <p class="espacio">Álgebra Lineal con Aplicaciones</p>
+                                <p class="calificacion">{{data[0].clases[6]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[6]?.intentos, data[0].clases[6]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[7]?.calificacion, data[0].clases[7]?.cursada)" id="22">
+                                <p class="espacio">Programación Orientada a Objetos I</p>
+                                <p class="calificacion">{{data[0].clases[7]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[7]?.intentos, data[0].clases[7]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[8]?.calificacion, data[0].clases[8]?.cursada)" id="23">
+                                <p class="espacio">Modelado de Procesos de Negocio</p>
+                                <p class="calificacion">{{data[0].clases[8]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[8]?.intentos, data[0].clases[8]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[9]?.calificacion, data[0].clases[9]?.cursada)" id="25">
+                                <p class="espacio">DHPC</p>
+                                <p class="calificacion">{{data[0].clases[9]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[9]?.intentos, data[0].clases[9]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[10]?.calificacion, data[0].clases[10]?.cursada)"
+                                id="26">
+                                <p class="espacio">Lengua Extranjera II</p>
+                                <p class="calificacion">{{data[0].clases[10]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[10]?.intentos, data[0].clases[10]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="d-flex justify-content-center" scope="col">
+                            <div class="container semestre">
+                                <p class="espacio">3</p>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="d-flex justify-content-center">
+                        <td>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[11]?.calificacion, data[0].clases[11]?.cursada)"
+                                id="28">
+                                <p class="espacio">Probabilidad y Estadística</p>
+                                <p class="calificacion">{{data[0].clases[11]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[11]?.intentos, data[0].clases[11]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[12]?.calificacion, data[0].clases[12]?.cursada)"
+                                id="29">
+                                <p class="espacio">Matemáticas Discretas</p>
+                                <p class="calificacion">{{data[0].clases[12]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[12]?.intentos, data[0].clases[12]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[13]?.calificacion, data[0].clases[13]?.cursada)"
+                                id="30">
+                                <p class="espacio">Programación Orientada a Objetos II</p>
+                                <p class="calificacion">{{data[0].clases[13]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[13]?.intentos, data[0].clases[13]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[14]?.calificacion, data[0].clases[14]?.cursada)"
+                                id="31">
+                                <p class="espacio">Herramientas Web</p>
+                                <p class="calificacion">{{data[0].clases[14]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[14]?.intentos, data[0].clases[14]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[15]?.calificacion, data[0].clases[15]?.cursada)"
+                                id="32">
+                                <p class="espacio">Lengua Extranjera III</p>
+                                <p class="calificacion">{{data[0].clases[15]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[15]?.intentos, data[0].clases[15]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="d-flex justify-content-center" scope="col">
+                            <div class="container semestre">
+                                <p class="espacio">4</p>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="d-flex justify-content-center">
+                        <td>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[16]?.calificacion, data[0].clases[16]?.cursada)"
+                                id="27">
+                                <p class="espacio">Redes de Computadoras</p>
+                                <p class="calificacion">{{data[0].clases[16]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[16]?.intentos, data[0].clases[16]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[17]?.calificacion, data[0].clases[17]?.cursada)"
+                                id="29">
+                                <p class="espacio">Métodos Estadísticos</p>
+                                <p class="calificacion">{{data[0].clases[17]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[17]?.intentos, data[0].clases[17]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[18]?.calificacion, data[0].clases[18]?.cursada)"
+                                id="30">
+                                <p class="espacio">Ingeniería de Software I</p>
+                                <p class="calificacion">{{data[0].clases[18]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[18]?.intentos, data[0].clases[18]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[19]?.calificacion, data[0].clases[19]?.cursada)"
+                                id="31">
+                                <p class="espacio">diseño de Bases de Datos</p>
+                                <p class="calificacion">{{data[0].clases[19]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[19]?.intentos, data[0].clases[19]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[20]?.calificacion, data[0].clases[20]?.cursada)"
+                                id="32">
+                                <p class="espacio">Lengua Extranjera IV</p>
+                                <p class="calificacion">{{data[0].clases[20]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[20]?.intentos, data[0].clases[20]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container formativo py-3">
+        <h5 class="text-center titulo">Nivel Formativo</h5>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="d-flex justify-content-center" scope="col">
+                            <div class="container semestre">
+                                <p class="espacio">5</p>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="d-flex justify-content-center">
+                        <td>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[21]?.calificacion, data[0].clases[21]?.cursada)"
+                                id="33">
+                                <p class="espacio">Redes y Servicios</p>
+                                <p class="calificacion">{{data[0].clases[21]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[21]?.intentos, data[0].clases[21]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[22]?.calificacion, data[0].clases[22]?.cursada)"
+                                id="34">
+                                <p class="espacio">Fundamentos de la Programación Lógica</p>
+                                <p class="calificacion">{{data[0].clases[22]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[22]?.intentos, data[0].clases[22]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[23]?.calificacion, data[0].clases[23]?.cursada)"
+                                id="35">
+                                <p class="espacio">Ingeniería de Software II</p>
+                                <p class="calificacion">{{data[0].clases[23]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[23]?.intentos, data[0].clases[23]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[24]?.calificacion, data[0].clases[24]?.cursada)"
+                                id="36">
+                                <p class="espacio">Administración de Bases de Datos</p>
+                                <p class="calificacion">{{data[0].clases[24]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[24]?.intentos, data[0].clases[24]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[25]?.calificacion, data[0].clases[25]?.cursada)"
+                                id="37">
+                                <p class="espacio">Administración de Sistemas Operativos</p>
+                                <p class="calificacion">{{data[0].clases[25]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[25]?.intentos, data[0].clases[25]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="d-flex justify-content-center" scope="col">
+                            <div class="container semestre">
+                                <p class="espacio">6</p>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="d-flex justify-content-center">
+                        <td>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[26]?.calificacion, data[0].clases[26]?.cursada)"
+                                id="40">
+                                <p class="espacio">Administración de Redes</p>
+                                <p class="calificacion">{{data[0].clases[26]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[26]?.intentos, data[0].clases[26]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[27]?.calificacion, data[0].clases[27]?.cursada)"
+                                id="41">
+                                <p class="espacio">Administración de Proyectos</p>
+                                <p class="calificacion">{{data[0].clases[27]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[27]?.intentos, data[0].clases[27]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[28]?.calificacion, data[0].clases[28]?.cursada)"
+                                id="42">
+                                <p class="espacio">Diseño de la Interacción</p>
+                                <p class="calificacion">{{data[0].clases[28]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[28]?.intentos, data[0].clases[28]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[29]?.calificacion, data[0].clases[29]?.cursada)"
+                                id="43">
+                                <p class="espacio">Mineria de Datos</p>
+                                <p class="calificacion">{{data[0].clases[29]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[29]?.intentos, data[0].clases[29]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[30]?.calificacion, data[0].clases[30]?.cursada)"
+                                id="44">
+                                <p class="espacio">Cómputo Distribuido</p>
+                                <p class="calificacion">{{data[0].clases[30]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[30]?.intentos, data[0].clases[30]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[31]?.calificacion, data[0].clases[31]?.cursada)"
+                                id="45">
+                                <p class="espacio">Tecnologías Web</p>
+                                <p class="calificacion">{{data[0].clases[31]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[31]?.intentos, data[0].clases[31]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="d-flex justify-content-center" scope="col">
+                            <div class="container semestre">
+                                <p class="espacio">7</p>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="d-flex justify-content-center">
+                        <td>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[32]?.calificacion, data[0].clases[32]?.cursada)"
+                                id="48">
+                                <p class="espacio">Control de Calidad de Software</p>
+                                <p class="calificacion">{{data[0].clases[32]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[32]?.intentos, data[0].clases[32]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[33]?.calificacion, data[0].clases[33]?.cursada)"
+                                id="49">
+                                <p class="espacio">Inteligencia de Negocios</p>
+                                <p class="calificacion">{{data[0].clases[33]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[33]?.intentos, data[0].clases[33]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[34]?.calificacion, data[0].clases[34]?.cursada)"
+                                id="50">
+                                <p class="espacio">Modelos de Desarrollo Web</p>
+                                <p class="calificacion">{{data[0].clases[34]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[34]?.intentos, data[0].clases[34]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[35]?.calificacion, data[0].clases[35]?.cursada)"
+                                id="52">
+                                <p class="espacio">Optativa I</p>
+                                <p class="calificacion">{{data[0].clases[35]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[35]?.intentos, data[0].clases[35]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[36]?.calificacion, data[0].clases[36]?.cursada)"
+                                id="55">
+                                <p class="espacio">Optativa I DESIT</p>
+                                <p class="calificacion">{{data[0].clases[36]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[36]?.intentos, data[0].clases[36]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="d-flex justify-content-center" scope="col">
+                            <div class="container semestre">
+                                <p class="espacio">8</p>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="d-flex justify-content-center">
+                        <td>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[37]?.calificacion, data[0].clases[37]?.cursada)"
+                                id="57">
+                                <p class="espacio">Servicio Social</p>
+                                <p class="calificacion">{{data[0].clases[37]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[37]?.intentos, data[0].clases[37]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[38]?.calificacion, data[0].clases[38]?.cursada)"
+                                id="58">
+                                <p class="espacio">Trabajo Colaborativo</p>
+                                <p class="calificacion">{{data[0].clases[38]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[38]?.intentos, data[0].clases[38]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[39]?.calificacion, data[0].clases[39]?.cursada)"
+                                id="59">
+                                <p class="espacio">Servicios Web</p>
+                                <p class="calificacion">{{data[0].clases[39]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[39]?.intentos, data[0].clases[39]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[40]?.calificacion, data[0].clases[40]?.cursada)"
+                                id="62">
+                                <p class="espacio">Optativa II</p>
+                                <p class="calificacion">{{data[0].clases[40]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[40]?.intentos, data[0].clases[40]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[41]?.calificacion, data[0].clases[41]?.cursada)"
+                                id="63">
+                                <p class="espacio">Optativa III</p>
+                                <p class="calificacion">{{data[0].clases[41]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[41]?.intentos, data[0].clases[41]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="d-flex justify-content-center" scope="col">
+                            <div class="container semestre">
+                                <p class="espacio">9</p>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="d-flex justify-content-center">
+                        <td>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[42]?.calificacion, data[0].clases[42]?.cursada)"
+                                id="64">
+                                <p class="espacio">Práctica Profesional</p>
+                                <p class="calificacion">{{data[0].clases[42]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[42]?.intentos, data[0].clases[42]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[43]?.calificacion, data[0].clases[43]?.cursada)"
+                                id="63">
+                                <p class="espacio">Programación de Dispositivos Móviles</p>
+                                <p class="calificacion">{{data[0].clases[43]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[43]?.intentos, data[0].clases[43]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container materia my-2 pb-1"
+                                [class]="getClase(data[0].clases[44]?.calificacion, data[0].clases[44]?.cursada)"
+                                id="63">
+                                <p class="espacio">Proyecto I+D 1</p>
+                                <p class="calificacion">{{data[0].clases[44]?.calificacion | calificacion}}</p>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4 text-center">
+                                            <i
+                                                [class]="getStatus(data[0].clases[44]?.intentos, data[0].clases[44]?.cursada)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

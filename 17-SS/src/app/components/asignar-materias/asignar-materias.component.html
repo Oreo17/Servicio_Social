@@ -1,0 +1,47 @@
+<div class="container">
+    <img class="img-fluid rounded mx-auto d-block" src="../../../assets/images/mesa.jpg" alt="">
+    <div class="row">
+        <div class="col-md-5">
+            <h3 class="text-center my-3">Información del alumno</h3>
+            <div class="card text-center text-bg-light mb-3">
+                <div class="card-header">
+                    {{user.carrera}}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{user.nombre}} {{user.apellidoPaterno}} {{user.apellidoMaterno}}</h5>
+                    <p class="card-text">{{user.matricula}}</p>
+                </div>
+                <div class="card-footer text-body-secondary">
+                    Avance: {{user.avance}} %
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <h3 class="text-center my-3">Selección de materias</h3>
+            <p class="my-3">Selecciona una materia: </p>
+            <select class="form-select" [(ngModel)]="selectedCourse" name="selectedCourse"
+                aria-label="Default select example">
+                <option *ngFor="let materia of next" [ngValue]="materia">
+                    {{ materia.nombre }}
+                </option>
+            </select>
+            <div class="container my-2">
+                <div class="alert alert-danger" role="alert" *ngIf="courseError">
+                    Por favor, selecciona un curso válido.
+                </div>
+                <div class="alert alert-success" role="alert" *ngIf="courseExito">
+                    Curso agregado exitosamente.
+                </div>
+            </div>
+            <div class="col-1 mx-auto my-4">
+                <button class="btn btn-primary d-flex align-items-center" *ngIf="guardar" (click)="saveCourse()">
+                    Guardar
+                </button>
+                <button class="btn btn-primary d-flex align-items-center" *ngIf="ok" (click)="reset()">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,166 @@
+.nivel1{
+    color: #333;
+    background-color: rgb(21, 148, 221);
+  }
+  
+  .basico{
+    color: #fff;
+    background-color: #023e8a;
+    border-radius: 8px 8px 0px 0px;
+  }
+  
+  .info{
+    color: #fff;
+    background-color: #383f36;
+    border-radius: 8px 8px 0px 0px;
+  }
+  
+  .formativo{
+    color: #fff;
+    background-color: #03045e;
+    border-radius: 8px 8px 0px 0px;
+  }
+  
+  .titulo{
+    margin: 0;
+    padding: 0 5px 0 5px;
+  }
+  
+  .nivel2{
+    color: #333;
+    background-color: rgb(21, 221, 138);
+  }
+  
+  .materia {
+    position: relative;
+    min-height: 40px;
+    margin: 2px 0 2px 0;
+    text-align: center;
+    color: #023047;
+    font-size: small;
+    background: #90e0ef;
+    width: 150px;
+    border-radius: 5px;
+  }
+
+  .ico {
+    position: relative;
+    min-height: 40px;
+    margin: 2px 0 2px 0;
+    text-align: center;
+    color: #12394d;
+    font-size: small;
+    background: #85E6C5;
+    width: 150px;
+    border-radius: 5px;
+  }
+  
+  .reprobada{
+    position: relative;
+    min-height: 40px;
+    margin: 2px 0 2px 0;
+    text-align: center;
+    color: #f1faee;
+    font-size: small;
+    background: #e63946;
+    width: 150px;
+    border-radius: 5px;
+  }
+  
+  .aprobada{
+    position: relative;
+    min-height: 40px;
+    margin: 2px 0 2px 0;
+    text-align: center;
+    color: #f1faee;
+    font-size: small;
+    background: #38b000;
+    width: 150px;
+    border-radius: 5px;
+  }
+  
+  .cursando{
+    position: relative;
+    min-height: 40px;
+    margin: 2px 0 2px 0;
+    text-align: center;
+    color: #f1faee;
+    font-size: small;
+    background: #00a6fb;
+    width: 150px;
+    border-radius: 5px;
+  }
+  
+  .semestre{
+    position: relative;
+    min-height: 40px;
+    margin: 2px 0 2px 0;
+    text-align: center;
+    color: #fff;
+    font-size: small;
+    background: #023047;
+    width: 150px;
+    border-radius: 5px;
+  }
+  
+  img.estudiantes{
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .tituloMapa {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: small;
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .row.bg1 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .espacio {
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+  
+  p.espacio {
+    padding-top: 4.2px;
+    margin: 0;
+  }
+  
+  p.calificacion{
+    padding-top: 4.2px;
+    margin: 0;
+    font-size: medium;
+  }
+
+  p.icoCalificacion{
+    padding-top: 4.2px;
+    margin: 0;
+    font-size: medium;
+  }
+  
+  .grow {
+    transition: 0.4s ease;
+    cursor: pointer;
+  }
+  
+  .grow:hover {
+    -webkit-transform: scale(1);
+    -ms-transform: scale();
+    transform: scale(1.1);
+    transition: 0.1s ease;
+  }
+  
+  div.contenedor{
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+  
+  th.centro{
+    margin: 0 auto;
+  }

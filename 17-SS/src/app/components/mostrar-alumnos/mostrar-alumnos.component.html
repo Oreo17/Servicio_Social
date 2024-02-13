@@ -1,0 +1,42 @@
+<div class="container">
+    <img class="img-fluid rounded mx-auto d-block" src="../../../assets/images/estudiantes.png" alt="">
+    <div class="card text-center my-4 text-bg-light mb-3">
+        <div class="card-header">
+            Bienvenido
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Facultad de Ciencias de la Computación - BUAP</h5>
+            <p class="card-text">{{user.nombre}} {{user.apellidoPaterno}} {{user.apellidoMaterno}}</p>
+        </div>
+        <div class="card-footer text-body-secondary">
+            {{user.matricula}}
+        </div>
+    </div>
+    <h4 class="text-center my-4">Lista de alumnos</h4>
+    <div class="mb-3">
+        <input #query type="text" class="form-control text-center" id="formGroupExampleInput" placeholder="Buscar"
+            (keyup)="search(query.value)">
+    </div>
+    <table class="table table-hover" *ngIf="alumnos && alumnos.length > 0">
+        <thead>
+            <tr>
+                <th scope="col">Matricula</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Plan de Estudios</th>
+                <th scope="col">Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of alumnos" class="align-items-center">
+                <td class="item" (click)="navegarAAlumno(item.id)">{{item.matricula}}</td>
+                <td class="item" (click)="navegarAAlumno(item.id)">{{item.nombre}} {{item.apellidoPaterno}}
+                    {{item.apellidoMaterno}}</td>
+                <td>{{item.carrera}}</td>
+                <td>
+                    <button class="btn btn-primary me-3" (click)="navegarCalificacion(item.id)">Calificaciones</button>
+                    <button class="btn btn-info" (click)="navegarMaterias(item.id)">Materias</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,117 @@
+<div class="container">
+    <div class="container">
+        <div class="rounded-bottom text-white d-flex flex-row fondoMed" style="
+          background-image: url(../../../assets/images/medicinaRecortada.jpg);
+          height: 320px;
+        ">
+            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px">
+                <img src="../../../assets/images/user.png" alt="Generic placeholder image"
+                    class="img-fluid img-thumbnail mt-4 mb-3" style="width: 150px; z-index: 1" />
+            </div>
+            <div class="ms-3" style="margin-top: 130px">
+                <h5 class="nombreUsuario">
+                    {{ user.nombre }} {{ user.apellidoPaterno }} {{ user.apellidoMaterno }}
+                </h5>
+                <p>BUAP</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-3">
+            <h4>Informacion del alumno</h4>
+            <h5>Nombre:</h5>
+            <p class="nombreUsuario">
+                {{ user.nombre }} {{ user.apellidoPaterno }} {{ user.apellidoMaterno }}
+            </p>
+            <h5>Matricula:</h5>
+            <p>{{ user.matricula }}</p>
+            <h5>Carrera:</h5>
+            <p>{{ user.carrera }}</p>
+            <h5>Materias reprobadas:</h5>
+            <p>{{ user.reprobadas }} materias</p>
+            <h5>Porcentaje de avance:</h5>
+            <div class="progress mb-2" id="progresoCarrera">
+                <div class="progress-bar" role="progressbar" aria-label="Example with label"
+                    [style.width.%]="user.avance" [attr.aria-valuenow]="user.avance" aria-valuemin="0"
+                    aria-valuemax="100">
+                    {{ user.avance }}%
+                </div>
+            </div>
+            <h5>Ubicación:</h5>
+            <p>
+                Avenida San Claudio, Blvrd 14 Sur, Cdad. Universitaria, 72592 Puebla,
+                Pue.
+            </p>
+        </div>
+        <div class="col-md-9">
+            <h4>Semestre Actual</h4>
+            <table class="table table-striped" *ngIf="current && current.length > 0">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Semestre</th>
+                        <th scope="col">Materia anterior</th>
+                    </tr>
+                </thead>
+                <tbody id="materiasActuales">
+                    <tr *ngFor="let clase of current[0]">
+                        <td>{{ clase.nombre }}</td>
+                        <td>{{ clase.semestre }}</td>
+                        <td>{{ clase.materiaAnterior }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col" id="errorMateriasActuales"></div>
+            </div>
+            <h4>Proximo semestre</h4>
+            <table class="table table-striped" *ngIf="next && next.length > 0">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Semestre</th>
+                        <th>Materia anterior</th>
+                    </tr>
+                </thead>
+                <tbody id="materiasSiguientes">
+                    <tr *ngFor="let clase of next[0]">
+                        <td>{{ clase.nombre }}</td>
+                        <td>{{ clase.semestre }}</td>
+                        <td>{{ clase.materiaAnterior }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col" id="errorMateriasSiguientes"></div>
+            </div>
+            <h4>Materias reprobadas</h4>
+            <div *ngIf="mostrarReprobadas">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Intentos</th>
+                            <th>Calificación</th>
+                        </tr>
+                    </thead>
+                    <tbody id="materiasSiguientes">
+                        <tr *ngFor="let item of failed[0]">
+                            <td>{{ item.nombre }}</td>
+                            <td>{{ item.intentos }}</td>
+                            <td>{{ item.calificacion }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div class="col" id="errorMateriasSiguientes"></div>
+                </div>
+            </div>
+            <div class="container basico py-3" *ngIf="mostrarMensaje">
+                <h5 class="text-center titulo">No tiene materias reprobadas</h5>
+            </div>
+        </div>
+    </div>
+</div>

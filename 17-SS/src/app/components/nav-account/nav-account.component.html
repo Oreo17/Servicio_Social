@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg container-fluid colorBuap">
+    <div class="container">
+        <li>
+            <a class="navbar-brand">
+                <img src="../../../assets/images/logo-puebla.png" width="50" height="50" class="d-inline-block">
+            </a>
+        </li>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" routerLink="buap/autoServicios" aria-current="page" >Informacion Personal</a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" routerLink="buap/autoServicios/proyeccion">Proyeccion de materias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="buap" (click)="logout()">Cerrar Sesion</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

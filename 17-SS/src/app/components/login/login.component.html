@@ -1,0 +1,20 @@
+<div class="container formSesion w-25 py-4 my-4">
+    <img class="img-fluid d-block mx-auto response my-5" src="../../../assets/images/escudo.png" alt="">
+    <form [formGroup]="loginForm" class="my-3 py-3">
+        <h1 class="text-center my-1">Bienvenido</h1>
+        <div class="alert alert-danger text-center" role="alert" *ngIf="loginError">
+            Credenciales incorrectas. <br> Por favor, verifica tu matrícula y contraseña.
+        </div>
+        <div class="my-3 anc">
+            <input type="number" class="border-bottom user" id="inputMatricula" name="inputMatricula"  
+                formControlName="matricula" placeholder="Matricula" required>
+        </div>
+        <div class="mb-3 anc">
+            <input type="password" class="border-bottom" id="inputPassword" name="inputPassword"
+                formControlName="password" placeholder="Contraseña" required>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto my-4">
+            <button type="submit" class="btn btn-blue" (click)="onSubmit()" >Iniciar Sesión</button>
+        </div>
+    </form>
+</div>
